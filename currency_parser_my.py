@@ -2,7 +2,11 @@
 
 import pandas as pd
 
-url = 'https://www.cbr.ru/scripts/XML_dynamic.asp?date_req1=10/01/2022&date_req2=20/01/2022&VAL_NM_RQ=R01235'
+date_in = "01/01/2022"
+date_out = "31/01/2022"
+nm_rq = "R01235"
+
+url = 'https://www.cbr.ru/scripts/XML_dynamic.asp?date_req1={}&date_req2={}&VAL_NM_RQ={}'.format(date_in, date_out, nm_rq)
 results = pd.read_xml(url)
 
 print(results)
